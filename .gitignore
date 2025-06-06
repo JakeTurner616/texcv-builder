@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+
+# Temporary files
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Backup files
+*~
+*.bak
+*.swp
+*.tmp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+
+# VS Code settings (if applicable)
+.vscode/
+
+# LaTeX build artifacts (if building outside `output/`)
+*.bbl
+*.blg
+*.brf
+*.lof
+*.lot
+*.nav
+*.snm
+
+# Inkscape export temp files
+*.svg~
+
+# Ignore Python venv
+venv/
+
+# Ignore the template with all my personal information
+jankapunkt-template/template-prod.tex

@@ -1,0 +1,196 @@
+% -----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+% Copyright (c) 2015 Jan Küster
+% Copyright (c) 2025 Jakob D Turner
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+% -----------------------------------------------------------------------------------------------------------------------------------------------%
+
+% This is a custom CV template for LaTeX based on jankapunkt 'sidebar' template https://github.com/jankapunkt/latexcv/blob/master/sidebar/main.tex
+\documentclass[10pt,A4]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xstring, xifthen}
+\usepackage[default]{raleway}
+\usepackage[default]{sourcesanspro}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{moresize}
+\usepackage{fontawesome}
+\usepackage{paracol}
+\usepackage[a4paper]{geometry}
+\geometry{top=1cm, bottom=1cm, left=1cm, right=1cm}
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\setlength{\parindent}{0mm}
+\usepackage{array}
+\newcolumntype{x}[1]{>{\raggedleft\hspace{0pt}}p{#1}}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+\usepackage{transparent}
+\usepackage{color}
+\definecolor{maincol}{RGB}{225, 0, 0}
+\definecolor{darkcol}{RGB}{70, 70, 70}
+\definecolor{lightcol}{RGB}{245,245,245}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\columnseprule}{0.4pt}
+\def\columnseprulecolor{\color{lightcol}}
+
+\newcommand{\mpwidth}{\linewidth-\fboxsep-\fboxsep}
+\newcommand{\cvsection}[1] {
+	\vspace{14pt}
+	\textbf{\LARGE{\textcolor{darkcol}{\uppercase{#1}}}}\\[-4pt]
+	\textcolor{maincol}{ \rule{0.1\textwidth}{2pt} } \\
+}
+\newcommand{\cvskill}[2] {
+	\textbf{#1} \hfill {#2}\\
+}
+\newcommand{\cvtext}[1] {
+	\parbox{1\mpwidth}{#1}
+}
+\newcommand{\cvproject}[3]{
+  \vspace{4pt}
+  \textbf{{#1}} \\
+  {\footnotesize\href{#2}{#2}} \\
+  \textit{#3} \\
+}
+
+\begin{document}
+\columnratio{0.29}
+\setlength{\columnsep}{3.2em}
+
+\begin{paracol}{2}
+\begin{leftcolumn}
+\colorbox{lightcol}{%
+  \begin{minipage}[t][\textheight][t]{\linewidth}
+    \vspace{4pt}
+
+    \begin{center}
+      \begin{tikzpicture}
+      \fill[maincol] (-0.2, 0.6) -- (3.3, 0.6) -- (2.8, 2.0) -- (-0.6, 2.0) -- cycle;
+      \draw[line width=0.9pt, color=black, join=bevel]
+      (0.05,0.15) -- (2.55,0.15) -- (2.55,2.65) -- (0.05,2.65) -- cycle;
+      \node at (1.3, 1.4) {\includegraphics[width=2.5cm,height=2.5cm]{untitled.jpg}};
+      \end{tikzpicture}
+    \end{center}
+
+    \cvsection{Contact}
+
+    \begin{tabular}{@{}p{0.6cm} l}
+    \raisebox{-0.1\height}{\includegraphics[width=0.45cm]{pin.pdf}}  & City, State \\
+    \raisebox{-0.1\height}{\includegraphics[width=0.45cm]{mail.pdf}} & \href{mailto:email@example.com}{email@example.com} \\
+    \raisebox{-0.1\height}{\includegraphics[width=0.45cm]{link.pdf}} & \href{https://yourwebsite.com}{yourwebsite.com} \\
+    \end{tabular}
+
+    \cvsection{Education}
+    \cvskill{Year Degree, Your High School}{}
+    \cvskill{Year Degree, Your College or University}{}
+
+    \vspace{4pt}
+
+    \cvsection{Certificates}
+    \cvskill{Certificate Name}{Institution}
+    \cvskill{Certificate Name}{Institution}
+    \cvskill{Certificate Name}{Provider}
+
+    \vspace{4pt}
+
+    \cvsection{Skills}
+    \cvskill{Category 1}{}
+    \cvskill{Category 2}{}
+    \cvskill{Category 3}{}
+    \cvskill{Category 4}{}
+    \cvskill{Category 5}{}
+    \cvskill{Category 6}{}
+
+    \vspace{4pt}
+
+    \cvsection{Interests}
+    \cvskill{Interest 1}{}
+    \cvskill{Interest 2}{}
+    \cvskill{Interest 3}{}
+    \cvskill{Interest 4}{}
+
+    \vfill
+  \end{minipage}
+}
+\end{leftcolumn}
+
+\begin{rightcolumn}
+
+\fcolorbox{white}{darkcol}{\begin{minipage}[c][3.5cm][c]{1\mpwidth}
+	\begin{center}
+		\HUGE{ \textbf{ \textcolor{white}{ YOUR NAME } } } \\[-24pt]
+		\textcolor{white}{ \rule{0.1\textwidth}{1.25pt} } \\[4pt]
+		\large{ \textcolor{white}{Your Title or Role} }
+	\end{center}
+\end{minipage}} \\[14pt]
+
+\cvsection{Work Experience}
+
+\textbf{Job Title – \texttt{yourdomain.com}}\\
+\begin{itemize}
+    \item Responsibility or achievement 1
+    \item Responsibility or achievement 2
+    \item Responsibility or achievement 3
+\end{itemize}
+
+\vspace{10pt}
+
+\textbf{Job Title – \texttt{anotherproject.com}}\\
+\begin{itemize}
+    \item Responsibility or achievement 1
+    \item Responsibility or achievement 2
+    \item Responsibility or achievement 3
+\end{itemize}
+
+\cvsection{Misc Projects}
+
+\cvproject
+  {Project Name}
+  {https://github.com/yourusername/project}
+  {Short project description or goal.}
+
+\cvproject
+  {Project Name}
+  {https://yourwebsite.com/project}
+  {Short project description or outcome.}
+
+\cvproject
+  {Project Name}
+  {https://github.com/yourusername/project}
+  {Short technical or research context.}
+
+\cvproject
+  {Project Name}
+  {https://github.com/yourusername/project}
+  {What the project solves or demonstrates.}
+
+\cvsection{Volunteer Work}
+
+\textbf{Volunteer Title – Organization Name (City, State)} \\
+\textit{Start Year – End Year} \\
+\begin{itemize}
+  \item Description of responsibility or contribution.
+  \item Events or roles helped with.
+  \item Community or skill-building focus.
+\end{itemize}
+
+\end{rightcolumn}
+\end{paracol}
+\end{document}
